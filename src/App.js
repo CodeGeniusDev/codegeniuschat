@@ -30,12 +30,12 @@ function App() {
       const response = await result.response;
       const text = response.text();
 
-      // Add the bot's response to the chat history
-      const botMessage = { role: 'bot', content: text };
+      // Add the AI's response to the chat history
+      const botMessage = { role: 'AI', content: text };
       setMessages((prev) => [...prev, botMessage]);
     } catch (error) {
       console.error('Error:', error);
-      const errorMessage = { role: 'bot', content: 'Sorry, something went wrong. Please try again.' };
+      const errorMessage = { role: 'AI', content: 'Sorry, something went wrong. Please try again.' };
       setMessages((prev) => [...prev, errorMessage]);
     } finally {
       setLoading(false);
@@ -55,11 +55,11 @@ function App() {
 
   return (
     <div className="chat-container">
-      <h1 className='text-red'>Chatbot with Gemini API</h1>
+      <h1 className='h1'>Chat with CodeGenius Bot!</h1>
       <div className="chat-history">
         {messages.map((msg, index) => (
           <div key={index} className={`message ${msg.role}`}>
-            <strong>{msg.role === 'user' ? 'You' : 'Bot'}:</strong>
+            <strong>{msg.role === 'user' ? 'You' : 'AI'}:</strong>
             <ReactMarkdown>{msg.content}</ReactMarkdown>
           </div>
         ))}
