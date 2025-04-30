@@ -54,6 +54,7 @@ strong {
 
 .input-container {
   display: flex;
+  border-color: #72655c;
   gap: 10px;
 }
 
